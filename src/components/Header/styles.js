@@ -39,6 +39,7 @@ export const Profile = styled.div`
         width: 56px;
         height: 56px;
         border-radius: 50%;
+        border: 1px solid ${({theme}) => theme.COLORS.PHOTO_BORDER};
     }
 
     > div {
