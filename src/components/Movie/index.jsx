@@ -1,11 +1,14 @@
 import { Container } from './styles'
 import { Tag } from '../Tag'
 
+
 export function Movie({ data, ...rest}) {
     return (
         <Container {...rest}>
             <h1>{data.title}</h1>
-
+            <h2>{data.stars}</h2>
+            <p>{data.desc}</p>
+            
             {
                 data.tags && 
                 <footer>
@@ -14,6 +17,7 @@ export function Movie({ data, ...rest}) {
                     }
                 </footer>
             }
+     
         </Container>
     )
 }

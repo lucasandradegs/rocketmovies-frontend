@@ -1,8 +1,10 @@
 import { Container } from "./styles";
 
-export function Tag({title, ...rest}) {
+export function Tag({title, colored = false, ...rest}) {
     return (
-        <Container {...rest}>
+        <Container {...rest}
+            $colored={colored}
+        >
             {title}
         </Container>
     )

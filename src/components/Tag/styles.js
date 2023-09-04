@@ -6,5 +6,5 @@ export const Container = styled.span`
     border-radius: 5px;
     margin-right: 8px;
     color: ${({theme}) => theme.COLORS.TAG_NAME};
-    background-color: ${({theme}) => theme.COLORS.TAG_BACKGROUND};
+    background-color: ${({theme, $colored}) => $colored ? theme.COLORS.TAG_BACKGROUND : theme.COLORS.THIRD_BACKGROUND};
 `;

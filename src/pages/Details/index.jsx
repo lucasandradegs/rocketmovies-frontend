@@ -24,9 +24,9 @@ export default function Details() {
                         <span>23/05/22 às 08:00</span>          
                     </div>       
                     <Section>
-                        <Tag title="Ficção Científica"/>
-                        <Tag title="Drama"/>
-                        <Tag title="Família"/>
+                        <Tag title="Ficção Científica" colored/>
+                        <Tag title="Drama" colored/>
+                        <Tag title="Família" colored/>
                     </Section>
                     <p>
                     Pragas nas colheitas fizeram a civilização humana regredir para uma sociedade agrária em futuro de data desconhecida. 

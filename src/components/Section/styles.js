@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 export const Container = styled.section`
     margin: 40px 0;
+    padding: 0;
 
     > h2 {
         border-bottom-color: ${({theme}) => theme.COLORS.EXIT};
