@@ -24,7 +24,7 @@ export const Container = styled.button`
         text-align: justify;
         display: -webkit-box;
         -webkit-line-clamp: 2;
-        overflow: hidden;
+        overflow-y: hidden;
         -webkit-box-orient: vertical; 
     }
 

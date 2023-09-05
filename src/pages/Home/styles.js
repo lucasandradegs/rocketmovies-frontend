@@ -8,6 +8,7 @@ export const Container = styled.div`
 export const Content = styled.div`
     overflow-y: scroll;
     padding: 0 123px;
+    height: calc(100vh - 217px);
 
 `;
 
