@@ -4,16 +4,19 @@ export const Container = styled.div`
     width: 100%;
     height: 100%;
 
-    > main {
-        padding: 0 123px;
-    }
-
 `;
 export const Content = styled.div`
+    overflow-y: scroll;
+    padding: 0 123px;
+
+`;
+
+export const NewMovie = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
-
+    padding: 0 123px;
+    margin-bottom: 40px;
 
 
     > h2 {
@@ -32,8 +35,6 @@ export const Content = styled.div`
             margin-right: 8px;
         }
     }
-
-
 `;
 
 
