@@ -27,7 +27,7 @@ export function NewMovie() {
                                 <Input placeholder="Título" />
                                 <Input placeholder="Sua nota (de 0 a 5)" />
                             </div>   
-                        <Textarea placeholder="Observações"/>
+                        <Textarea placeholder="Descrição do filme"/>
                         <Section title="Marcadores">
                             <div className="tags">
                                 <MovieItem value="Família" />

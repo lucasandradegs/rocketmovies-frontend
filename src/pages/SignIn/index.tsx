@@ -27,7 +27,7 @@ export function SignIn() {
 
                 <Button title="Entrar"/>
                 <Link to="/register">
-                <ButtonText title="Criar contra" />
+                <ButtonText title="Criar contra"/>
                 </Link>
                 
             </Form>
