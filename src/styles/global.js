@@ -31,4 +31,26 @@ export default createGlobalStyle`
     button:hover, a:hover {
         filter: brightness(0.9);
     }
+
+    /* width */
+    ::-webkit-scrollbar {
+    width: 8px;
+    height: 96px;
+    }
+
+/* Track */
+    ::-webkit-scrollbar-track {
+    display: none;
+    }
+
+/* Handle */
+    ::-webkit-scrollbar-thumb {
+    background: ${({theme}) => theme.COLORS.PINK_TITLE};
+    border-radius: 8px;
+    }
+
+/* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+    }
 `;

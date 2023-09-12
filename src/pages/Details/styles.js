@@ -25,6 +25,7 @@ export const Content = styled.div`
     flex-direction: column;
 
 
+
     > h1 {
         align-items: center;
         font-size: 36px;
@@ -45,13 +46,14 @@ export const Content = styled.div`
 
     > p {
         text-align: justify;
+        margin-top: 24px;
     }
 
     > div {
         display: flex;
         align-items: center;
         margin-top: 24px;
-        margin-bottom: -40px;
+        margin-bottom: 40px;
 
         > svg {
             color: ${({theme}) => theme.COLORS.PINK_TITLE};

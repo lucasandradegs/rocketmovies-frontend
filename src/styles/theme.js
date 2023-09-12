@@ -14,8 +14,10 @@ export default {
       EXIT: "#948F99",
       ICONS: "#000000",
       HOME: "#272125",
+      BLACK: "#0D0C0F",
         
   
       GRAY_100: "#999591",
+      RED: "#FF002E"
     }
   }

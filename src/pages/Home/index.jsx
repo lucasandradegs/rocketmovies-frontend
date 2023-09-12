@@ -6,6 +6,7 @@ import { Section } from '../../components/Section'
 import { Movie } from '../../components/Movie';
 import { AiFillStar } from 'react-icons/ai';
 import { Star } from '../../components/Star';
+import { Link } from "react-router-dom"
 
 export function Home() {
     return (
@@ -13,7 +14,9 @@ export function Home() {
             <Header />
                 <NewMovie>
                     <h2>Meus filmes</h2>
+                    <Link to="/new">
                     <Button title="Adicionar filme" icon={FiPlus} />
+                    </Link>           
                 </NewMovie>
                 <Content>
                 <Section>                 

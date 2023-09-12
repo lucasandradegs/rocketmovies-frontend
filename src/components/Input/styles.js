@@ -15,18 +15,17 @@ export const Container = styled.div`
         height: 56px;
         width: 100%;
 
-        padding: 12px;
+        padding: 18px 16px;
 
-        color: ${({theme}) => theme.COLORS.WHITE};
+        color: ${({theme}) => theme.COLORS.WHITE_TITLE};
         background: transparent;
         border: 0;
 
-        &:placeholder {
+        &::placeholder {
             color: ${({theme}) => theme.COLORS.EXIT};
         }
-
-        > svg {
-            margin-left: 16px;
-        }
     }
+        svg {
+            margin-left: 12px;
+        }
 `;

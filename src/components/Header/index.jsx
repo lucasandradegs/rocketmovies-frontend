@@ -10,7 +10,7 @@ export function Header() {
             <Middle>
                 <Input placeholder="Pesquisar pelo título"/>
             </Middle>        
-            <Profile>
+            <Profile to="/profile">
             <div>
                 <strong>Lucas Andrade</strong>
                 <span>sair</span>

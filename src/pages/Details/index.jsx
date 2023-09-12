@@ -8,7 +8,7 @@ import { FiArrowLeft, FiStar } from 'react-icons/fi'
 import { AiFillStar } from 'react-icons/ai'
 import { LiaClock } from 'react-icons/lia'
 
-export default function Details() {
+export function Details() {
     return (
        <Container>
         <Header />
