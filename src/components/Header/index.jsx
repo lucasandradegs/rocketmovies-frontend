@@ -1,24 +1,29 @@
-import { Container, Profile, Left, Middle } from './styles'
-import { Input } from '../Input'
+import { Container, Profile, Left, Middle, Logout } from './styles'
+import { useAuth } from "../../hooks/auth"
+import { api } from '../../services/api';
+import avatarPlaceholder from "../../assets/avatar_placeholder.svg"
 
-export function Header() {
+export function Header({children}) {
+    const { signOut, user } = useAuth();
+
+    const avatarUrl = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceholder
+
     return (
         <Container>
             <Left>
                 <span>RocketMovies</span>
             </Left>
-            <Middle>
-                <Input placeholder="Pesquisar pelo título"/>
-            </Middle>        
+            {children}
             <Profile to="/profile">
-            <div>
-                <strong>Lucas Andrade</strong>
-                <span>sair</span>
-            </div>
-                <img src="https://github.com/lucasandradegs.png" 
-                alt="user image" 
+                <strong>{user.name}</strong>
+                <img
+                    src={avatarUrl}
+                    alt={user.name}
                 />
             </Profile>
+            <Logout onClick={signOut}>
+                <span>sair</span>
+            </Logout>
         </Container>
     )
 }

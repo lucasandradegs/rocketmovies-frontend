@@ -22,6 +22,7 @@ export const Container = styled.div`
         gap: 24px;
         background-color: ${({theme}) => theme.COLORS.BLACK};
         border-radius: 10px;
+        flex-wrap: wrap;
     }
 `;
 

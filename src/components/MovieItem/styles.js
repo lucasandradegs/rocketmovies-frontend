@@ -28,7 +28,8 @@ export const Container = styled.div`
 
     > input {
         height: 56px;
-        flex-grow: 1;
+        width: 100%;
+        max-width: 225px;
 
         padding: 16px;
         color: ${({theme}) => theme.COLORS.WHITE_TITLE};

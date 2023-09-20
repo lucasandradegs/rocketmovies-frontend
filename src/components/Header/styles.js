@@ -9,7 +9,7 @@ export const Container = styled.header`
 
     border-bottom-width: 1px;
     border-bottom-style: solid;
-    border-bottom-color: ${({theme}) => theme.COLORS.HEADER};
+    border-bottom-color: ${({ theme }) => theme.COLORS.HEADER};
 
     display: flex;
     justify-content: space-between;
@@ -23,13 +23,23 @@ export const Left = styled.div`
     > span {
         font-size: 24px;
         font-weight: 500;
-        color: ${({theme}) => theme.COLORS.PINK_TITLE};
+        color: ${({ theme }) => theme.COLORS.PINK_TITLE};
     }
 `;
 
 export const Middle = styled.div`
     margin-top: 12px;
     width: 60%;
+`;
+
+export const Logout = styled.div`
+        display: flex;
+        position: absolute;
+        right: 190px;
+        top: 55px;
+        font-size: 14px;
+        color: ${({ theme }) => theme.COLORS.GRAY_100};
+        cursor: pointer;
 `;
 
 export const Profile = styled(Link)`
@@ -40,25 +50,16 @@ export const Profile = styled(Link)`
         width: 56px;
         height: 56px;
         border-radius: 50%;
-        border: 1px solid ${({theme}) => theme.COLORS.PHOTO_BORDER};
+        border: 1px solid ${({ theme }) => theme.COLORS.PHOTO_BORDER};
     }
 
-    > div {
+    > strong {
         display: flex;
         flex-direction: column;
         margin-right: 9px;
+        margin-bottom: 15px;
         line-height: 24px;
-
-        span {
-            font-size: 14px;
-            color: ${({theme}) => theme.COLORS.GRAY_100};
-            display: flex;
-            justify-content: flex-end;
-        }
-
-        strong {
-            font-size: 18px;
-            color: ${({theme}) => theme.COLORS.WHITE_TITLE};
-        }
+        font-size: 18px;
+        color: ${({ theme }) => theme.COLORS.WHITE_TITLE};
     }
 `;

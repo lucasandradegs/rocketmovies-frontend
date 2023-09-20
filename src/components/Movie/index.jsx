@@ -7,7 +7,6 @@ export function Movie({ data, ...rest}) {
     return (
         <Container {...rest}>
             <h1>{data.title}</h1>
-            {/* <h2>{data.stars}</h2> */}
             {
                 data.stars &&
                 <h2>
@@ -16,7 +15,7 @@ export function Movie({ data, ...rest}) {
                     }
                 </h2>
             }
-            <p>{data.desc}</p>
+            <p>{data.description}</p>
             {
                 data.tags && 
                 <footer>
