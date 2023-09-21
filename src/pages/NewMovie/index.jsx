@@ -12,6 +12,7 @@ import { useState } from "react";
 import { api } from "../../services/api";
 
 
+
 export function NewMovie() {
     const [title, setTitle] = useState("")
     const [description, setDescription] = useState("")
@@ -21,11 +22,20 @@ export function NewMovie() {
 
     const navigate = useNavigate();
 
+
+    async function handleRemove() {
+        const confirm = window.confirm("Deseja excluir o filme?")
+
+        if (confirm) {
+            navigate(-1)
+        }
+    }
+
     async function handleNewMovie() {
         if (!title) {
             return alert("Você precisa informar o nome do filme!")
         }
-        
+
         if (!rating) {
             return alert("Você precisa informar a nota do filme!")
         }
@@ -117,8 +127,8 @@ export function NewMovie() {
                         </div>
                     </Section>
                     <div className="buttons">
-                        <Button title="Excluir filme" colored />
-                        <Button title="Salvar alterações" onClick={handleNewMovie}/>
+                        <Button title="Excluir filme" colored onClick={handleRemove} />
+                        <Button title="Salvar alterações" onClick={handleNewMovie} />
                     </div>
                 </Form>
             </main>

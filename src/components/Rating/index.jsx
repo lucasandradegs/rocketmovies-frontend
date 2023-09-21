@@ -2,7 +2,7 @@ import { AiFillStar } from 'react-icons/ai';
 import { Container } from './styles';
 import { FiStar } from 'react-icons/fi';
 
-export function Rating({ rate }) {
+export function Rating({ rate, details = false }) {
     let stars = []
 
     for (let count = 1; count <= 5; count++) {
@@ -14,7 +14,7 @@ export function Rating({ rate }) {
     }
 
     return (
-        <Container>
+        <Container $details={details}>
             {stars}
         </Container>
     )

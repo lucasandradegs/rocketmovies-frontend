@@ -8,13 +8,22 @@ import { FiArrowLeft, FiStar } from 'react-icons/fi'
 import { AiFillStar } from 'react-icons/ai'
 import { LiaClock } from 'react-icons/lia'
 import { useState, useEffect } from 'react'
-import { useParams } from "react-router-dom"
+import { useParams, useNavigate } from "react-router-dom"
 import { api } from '../../services/api'
+import { useAuth } from '../../hooks/auth'
+import avatarPlaceholder from "../../assets/avatar_placeholder.svg"
+import { Rating } from '../../components/Rating'
+
 
 
 export function Details() {
+    const { user } = useAuth();
     const [data, setData] = useState(null)
     const params = useParams();
+
+    const avatarUrl = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceholder
+
+    const navigate = useNavigate();
 
     useEffect(() => {
         async function fetchMovies() {
@@ -25,6 +34,10 @@ export function Details() {
         fetchMovies()
     }, [])
 
+    function handleBack() {
+        navigate(-1)
+    }
+
 
     return (
         <Container>
@@ -33,28 +46,39 @@ export function Details() {
                 data &&
                 <main>
                     <Content>
-                        <ButtonText title="Voltar" icon={FiArrowLeft} />
-                        <h1>{data.title}</h1>
-                        <div>
-                            <img src="https://github.com/lucasandradegs.png" alt="user imgage" />
-                            <span>Por Lucas Andrade </span>
-                            <LiaClock />
-                            <span>23/05/22 às 08:00</span>
-                        </div>
-                        {
-                            data &&
-                            <Section>
-                                {
-                                    data.tags.map(tag => (
-                                        <Tag
-                                            key={String(tag.id)}
-                                            title={tag.name}
-                                            colored
-                                        />
-                                    ))
-                                }
-                            </Section>
-                        }
+                            <ButtonText
+                                title="Voltar"
+                                icon={FiArrowLeft}
+                                onClick={handleBack}
+                            />
+                            <div className='top'>
+                                <h1>{data.title}</h1>
+                                <Rating rate={data.rating} details />
+                            </div>
+                            <div className='mid'>
+                                <img
+                                    src={avatarUrl}
+                                    alt={user.name}
+                                />
+                                <span>Por {user.name}</span>
+                                <LiaClock />
+                                <span>{data.created_at}</span>
+                            </div>
+                            {
+                                data &&
+                                <Section>
+                                    {
+                                        data.tags.map(tag => (
+                                            <Tag
+                                                key={String(tag.id)}
+                                                title={tag.name}
+                                                colored
+                                            />
+                                        ))
+                                    }
+                                </Section>
+                            }
+
                         <p>
                             {data.description}
                         </p>

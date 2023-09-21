@@ -3,7 +3,7 @@ import { Container, Form, Avatar } from "./styles";
 import { ButtonText } from "../../components/ButtonText";
 import { Input } from "../../components/Input";
 import { Button } from "../../components/Button";
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { useState } from "react";
 import { useAuth } from "../../hooks/auth";
 import avatarPlaceholder from "../../assets/avatar_placeholder.svg"
@@ -21,13 +21,21 @@ export function Profile() {
     const [avatar, setAvatar] = useState(avatarUrl)
     const [avatarFile, setAvatarFile] = useState(null)
 
+    const navigate = useNavigate();
+
+    function handleBack() {
+        navigate(-1)
+    }
+
     async function handleUpdate() {
-        const user = {
+        const updated = {
             name,
             email,
             password: passwordNew,
             old_password: passwordOld
         }
+
+        const userUpdated = Object.assign(user, updated)
 
         await updateProfile({ user, avatarFile })
     }
@@ -43,10 +51,7 @@ export function Profile() {
     return (
         <Container>
             <header>
-                <Link to="/">
-                    <ButtonText title="Voltar" icon={FiArrowLeft} />
-                </Link>
-
+                    <ButtonText title="Voltar" icon={FiArrowLeft} onClick={handleBack}/>
             </header>
             <Form>
                 <Avatar>

@@ -5,5 +5,5 @@ export const Container = styled.span`
     display: flex;
     gap: 6px;
     margin-top: 8px;
-    font-size: 12px;
+    font-size: ${({details}) => details ? "20px" : "12px"}
 `;

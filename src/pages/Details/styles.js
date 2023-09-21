@@ -24,18 +24,25 @@ export const Content = styled.div`
     display: flex;
     flex-direction: column;
 
+    .top {
+        gap: 20px;
+    }
 
+    .mid {
+        margin-bottom: 40px;
+    }
+
+    svg {
+        font-size: 20px;
+        color: ${({theme}) => theme.COLORS.PINK_TITLE};
+    }
 
     > h1 {
         align-items: center;
         font-size: 36px;
         font-weight: 500;
-        padding-top: 24px;
+        
 
-        svg {
-            font-size: 20px;
-            color: ${({theme}) => theme.COLORS.PINK_TITLE};
-        }
     }
 
     > button:first-child {
@@ -46,14 +53,14 @@ export const Content = styled.div`
 
     > p {
         text-align: justify;
-        margin-top: 24px;
+        margin-top: 16px;
     }
 
     > div {
         display: flex;
         align-items: center;
         margin-top: 24px;
-        margin-bottom: 40px;
+        
 
         > svg {
             color: ${({theme}) => theme.COLORS.PINK_TITLE};
@@ -77,5 +84,3 @@ export const Content = styled.div`
     }
     
 `;
-
-
