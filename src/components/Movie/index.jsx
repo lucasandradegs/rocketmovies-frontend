@@ -1,20 +1,13 @@
 import { Container } from './styles'
 import { Tag } from '../Tag'
-import { Star } from '../Star'
+import { Rating } from '../Rating'
 
 
 export function Movie({ data, ...rest}) {
     return (
         <Container {...rest}>
             <h1>{data.title}</h1>
-            {
-                data.stars &&
-                <h2>
-                    {
-                        data.stars.map(star => <Star key={star.id} rating={star.rating}/>)
-                    }
-                </h2>
-            }
+            <Rating rate={data.rating} />
             <p>{data.description}</p>
             {
                 data.tags && 
@@ -24,7 +17,6 @@ export function Movie({ data, ...rest}) {
                     }
                 </footer>
             }
-     
         </Container>
     )
 }
